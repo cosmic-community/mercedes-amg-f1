@@ -18,7 +18,7 @@ export default function PartnersStrip({ partners }: PartnersStripProps) {
         </h2>
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
           {partners.map((partner) => {
-            const logo = partner.metadata?.logo;
+            const logo = partner.metadata?.featured_image;
             return (
               <Link
                 key={partner.id}
