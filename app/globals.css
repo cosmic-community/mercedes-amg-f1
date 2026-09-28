@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --f1-teal: #00a19c;
+  --f1-green: #c6ff00;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+::selection {
+  background-color: var(--f1-teal);
+  color: #000;
+}
+
+/* Hide horizontal scrollbar on the sub-bar ticker while keeping it scrollable */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+.overflow-x-auto {
+  scrollbar-width: none;
+}
