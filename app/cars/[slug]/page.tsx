@@ -1,6 +1,7 @@
 // app/cars/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import { getCarBySlug } from '@/lib/cosmic';
+import MarkdownContent from '@/components/MarkdownContent';
 
 export const revalidate = 60;
 
@@ -47,12 +48,7 @@ export default async function CarDetailPage({ params }: PageProps) {
             {car.metadata.seo_description}
           </p>
         )}
-        {content && (
-          <div
-            className="prose prose-invert prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        )}
+        {content && <MarkdownContent content={content} title={car.title} />}
       </div>
     </article>
   );
