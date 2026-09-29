@@ -1,6 +1,7 @@
 // app/news/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import { getNewsBySlug, formatDate } from '@/lib/cosmic';
+import MarkdownContent from '@/components/MarkdownContent';
 
 export const revalidate = 60;
 
@@ -45,12 +46,7 @@ export default async function NewsDetailPage({ params }: PageProps) {
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-6 py-16">
-        {content && (
-          <div
-            className="prose prose-invert prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        )}
+        {content && <MarkdownContent content={content} title={article.title} />}
       </div>
     </article>
   );
