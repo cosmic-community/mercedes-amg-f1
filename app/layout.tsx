@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
 import SubBar from '@/components/SubBar';
@@ -45,6 +46,12 @@ export default async function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <CosmicBadge bucketSlug={bucketSlug} />
+        {/* Cosmic AI Support agent */}
+        <Script
+          src="https://www.cosmicjs.com/agent.js"
+          data-key="pk_0ea95237ed319420f6f1f25c23a8d420"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
